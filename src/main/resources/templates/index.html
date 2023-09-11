@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulario de produtos</title>
+</head>
+<body>
+    <h1>Formulario de produtos</h1>
+    <!-- th:object associa o formulário ao objeto product do modelo -->
+    <form th:object="${product}" th:action="@{/save-product}" method="post">
+
+        <!-- th:field vincula o campo name ao atributo name do objeto product -->
+        <label for="name">Nome do Produto:</label>
+        <input type="text" id="name" name="name" th:field="*{name}"/>
+        <br/>
+
+        <!-- th:field vincula o campo price ao atributo price do objeto product -->
+        <label for="price">Preço: </label>
+        <input type="text" id="price" name="price" th:field="*{price}"/>
+        <br/>
+
+        <input type="submit" value="Salvar Produto"/>
+    </form>
+</body>
+</html>
