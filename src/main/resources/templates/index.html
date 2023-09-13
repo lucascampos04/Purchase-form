@@ -6,19 +6,35 @@
     <link rel="stylesheet" href="/static/bootstrap-4.0.0-dist/css/bootstrap.min.css">
 </head>
 <body>
-    <h1>Formulario de produtos</h1>
+    <h1>Formulario</h1>
     <!-- th:object associa o formulário ao objeto product do modelo -->
-    <form th:object="${product}" th:action="@{/save-product}" method="post">
+    <form th:object="${product}" th:action="@{/cadastro}" method="post">
 
         <!-- th:field vincula o campo name ao atributo name do objeto product -->
         <label for="name">Nome do Produto:</label>
         <input type="text" id="name" name="name" th:field="*{name}"/>
         <br/>
 
-        <!-- th:field vincula o campo price ao atributo price do objeto product -->
-        <label for="price">Preço: </label>
-        <input type="text" id="price" name="price" th:field="*{price}"/>
+        <!-- th:field vincula o campo email ao atributo price do objeto product -->
+        <label for="email">Email: </label>
+        <input type="text" id="email" name="email" th:field="*{email}"/>
         <br/>
+
+        <label for="telefone">Telefone : </label>
+        <input type="text" id="telefone" name="telefone" th:field="*{telefone}"/>
+        <br>
+
+        <label for="celular">Celular : </label>
+        <input type="text" id="celular" name="celular" th:field="*{whatsapp}"/>
+        <br>
+
+        <label for="password">Senha : </label>
+        <input type="text" id="password" name="password" th:field="*{password}"/>
+        <br>
+
+        <label for="confirm_password">Confirma senha : </label>
+        <input type="text" id="confirm_password" name="confirm_password" th:field="*{confirm_password}"/>
+        <br>
 
         <input type="submit" value="Salvar Produto"/>
     </form>
